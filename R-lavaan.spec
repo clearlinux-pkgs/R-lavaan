@@ -4,22 +4,24 @@
 #
 Name     : R-lavaan
 Version  : 0.6.3
-Release  : 8
+Release  : 9
 URL      : https://cran.r-project.org/src/contrib/lavaan_0.6-3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/lavaan_0.6-3.tar.gz
 Summary  : Latent Variable Analysis
 Group    : Development/Tools
 License  : GPL-2.0+
-Requires: R-mnormt
-Requires: R-numDeriv
-Requires: R-pbivnorm
+Requires: R-assertthat
+BuildRequires : R-assertthat
 BuildRequires : R-mnormt
 BuildRequires : R-numDeriv
 BuildRequires : R-pbivnorm
 BuildRequires : buildreq-R
 
 %description
-factor analysis, structural equation modeling and latent growth curve models.
+lavaan is a free, open source R package for latent variable analysis. You can
+use lavaan to estimate a large variety of multivariate statistical models,
+including path analysis, confirmatory factor analysis, structural equation
+modeling and growth curve models.
 
 %prep
 %setup -q -c -n lavaan
@@ -29,11 +31,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1537671855
+export SOURCE_DATE_EPOCH=1552793061
 
 %install
+export SOURCE_DATE_EPOCH=1552793061
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1537671855
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -68,8 +70,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library lavaan|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  lavaan || :
 
 
 %files
@@ -98,3 +99,8 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/lavaan/help/paths.rds
 /usr/lib64/R/library/lavaan/html/00Index.html
 /usr/lib64/R/library/lavaan/html/R.css
+/usr/lib64/R/library/lavaan/tests/testthat.R
+/usr/lib64/R/library/lavaan/tests/testthat/helper-skip_level.R
+/usr/lib64/R/library/lavaan/tests/testthat/test-lav_matrix.R
+/usr/lib64/R/library/lavaan/tests/testthat/test-lav_mvnorm.R
+/usr/lib64/R/library/lavaan/tests/testthat/test-skip_example.R
