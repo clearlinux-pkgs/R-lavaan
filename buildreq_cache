@@ -1,5 +1,6 @@
-0.6.3
+0.6.5
 R-assertthat
 R-mnormt
 R-numDeriv
 R-pbivnorm
+util-linux
