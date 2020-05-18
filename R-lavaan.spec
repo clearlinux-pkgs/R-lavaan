@@ -4,7 +4,7 @@
 #
 Name     : R-lavaan
 Version  : 0.6.6
-Release  : 21
+Release  : 22
 URL      : https://cran.r-project.org/src/contrib/lavaan_0.6-6.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/lavaan_0.6-6.tar.gz
 Summary  : Latent Variable Analysis
@@ -30,10 +30,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1589418007
+export SOURCE_DATE_EPOCH=1589827133
 
 %install
-export SOURCE_DATE_EPOCH=1589418007
+export SOURCE_DATE_EPOCH=1589827133
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
