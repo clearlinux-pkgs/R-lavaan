@@ -5,7 +5,7 @@
 #
 Name     : R-lavaan
 Version  : 0.6.16
-Release  : 53
+Release  : 54
 URL      : https://cran.r-project.org/src/contrib/lavaan_0.6-16.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/lavaan_0.6-16.tar.gz
 Summary  : Latent Variable Analysis
